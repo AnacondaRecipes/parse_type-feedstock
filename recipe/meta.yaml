@@ -33,10 +33,10 @@ test:
 
 about:
   home: https://github.com/jenisys/parse_type
-  license: BSD-3-Clause
+  license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: Simplifies to build parse types based on the parse module
-  license_family: BSD
   description: |
     parse_type extends the parse module (opposite of string.format()) with the following features:
       * build type converters for common use cases (enum/mapping, choice)
