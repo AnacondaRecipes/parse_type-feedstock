@@ -10,7 +10,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [py37]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -21,8 +20,8 @@ requirements:
     - wheel
   run:
     - python
-    - parse >=1.6
-    - six
+    - parse >=1.18.0
+    - six >=1.15
 
 test:
   imports:
