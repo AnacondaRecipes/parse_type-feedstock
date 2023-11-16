@@ -1,3 +1,0 @@
-# conda-build ... --channels https://staging.continuum.io/prefect/fs/parse-feedstock/pr2/ae16b95
-channels:
-    - https://staging.continuum.io/prefect/fs/parse-feedstock/pr2/ae16b95
