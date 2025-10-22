@@ -1,11 +1,12 @@
+{% set name = "parse_type" %}
 {% set version = "0.6.6" %}
 
 package:
-  name: parse_type
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/parse_type/parse_type-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 513a3784104839770d690e04339a8b4d33439fcd5dd99f2e4580f9fc1097bfb2
 
 build:
@@ -22,17 +23,28 @@ requirements:
     - setuptools-scm
   run:
     - python
+    - parse >=1.18.0  # [py>30]
     - parse >=1.13.1  # [py<=27]
-    - six >=1.15
     - enum34  # [py<34]
+    - six >=1.15
 
 test:
+  source_files:
+    - tests
   imports:
     - parse_type
+    - parse_type.builder
+    - parse_type.cardinality
+    - parse_type.cardinality_field
+    - parse_type.cfparse
+    - parse_type.parse_util
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -v tests
 
 about:
   home: https://github.com/jenisys/parse_type
