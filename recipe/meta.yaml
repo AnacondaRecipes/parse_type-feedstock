@@ -20,7 +20,7 @@ requirements:
     - setuptools >=64
     - pip
     - wheel
-    - setuptools-scm
+    - setuptools-scm >=8
   run:
     - python
     - parse >=1.18.0  # [py>30]
