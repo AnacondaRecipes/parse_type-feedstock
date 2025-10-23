@@ -40,7 +40,7 @@ test:
     - parse_type.parse_util
   requires:
     - pip
-    - pytest
+    - pytest >=5.0
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
